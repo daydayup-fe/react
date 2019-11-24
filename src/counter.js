@@ -13,10 +13,17 @@ class Counter extends Component {
         }
     }
     add(){
-        this.setState({count:this.state.count+1})
+       this.updateCounter(true)
     }
     reduce(){
-        this.setState({count:this.state.count-1})
+        this.updateCounter(false)
+    }
+    updateCounter(isIncrement){
+        const preValue = this.state.count;
+        const newValue = isIncrement ? preValue+1 : preValue-1;
+        this.setState({count:newValue});
+        this.props.onUpdate(newValue,preValue)
+
     }
    render(){
     return (
