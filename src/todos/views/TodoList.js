@@ -13,7 +13,7 @@ const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
         <TodoItem
           key={item.id}
           text={item.text}
-          completed={item.completed}
+          complete={item.complete}
           onToggle={() => onToggleTodo(item.id)}
           onRemove={() => onRemoveTodo(item.id)}
         />
